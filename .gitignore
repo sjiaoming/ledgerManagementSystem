@@ -2,3 +2,12 @@
 *.xlsx
 *.xls
 *.class
+*.component
+*.prefs
+*.container
+.settings/org.eclipse.wst.common.project.facet.core.xml
+*.name
+*.jsdtscope
+*.project
+.myeclipse/profiler/Tests.xml
+*.classpath
