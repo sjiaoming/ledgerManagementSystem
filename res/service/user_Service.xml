@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xsi:schemaLocation="
+            http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+            http://www.springframework.org/schema/aop
+            http://www.springframework.org/schema/aop/spring-aop-2.5.xsd"
+    default-autowire="autodetect">
+    
+    <bean id="userService" class="com.iboray.lms.application.service.impl.UserServiceImpl">
+		<property name="userActivity" ref="userActivity" />
+	</bean>
+    
+    <bean id="mResourceService" class="com.iboray.lms.application.service.impl.MResourceServiceImpl">
+		<property name="mResourceActivity" ref="mResourceActivity" />
+	</bean>
+    
+    <bean id="roleService" class="com.iboray.lms.application.service.impl.RoleServiceImpl">
+		<property name="roleActivity" ref="roleActivity" />
+	</bean>
+	
+    <bean id="deptService" class="com.iboray.lms.application.service.impl.DeptServiceImpl">
+		<property name="deptActivity" ref="deptActivity" />
+	</bean>
+	
+	<bean id="planService" class="com.iboray.lms.application.service.impl.PlanServiceImpl">
+		<property name="planActivity" ref="planActivity" />
+	</bean>	
+	
+	<bean id="procurementSourceService" class="com.iboray.lms.application.service.impl.ProcurementSourceServiceImpl">
+		<property name="procurementSourceActivity" ref="procurementSourceActivity" />
+	</bean>	
+	<bean id="cgcontractService" class="com.iboray.lms.application.service.impl.CGcontractServiceImpl">
+		<property name="cgcontractActivity" ref="cgcontractActivity" />
+	</bean>	
+	<bean id="xscontractService" class="com.iboray.lms.application.service.impl.XScontractServiceImpl">
+		<property name="xscontractActivity" ref="xscontractActivity" />
+	</bean>
+	<bean id="usecompService" class="com.iboray.lms.application.service.impl.UsecompServiceImpl">
+		<property name="usecompActivity" ref="usecompActivity" />
+	</bean>	
+	
+	<bean id="excelRead" class="com.iboray.lms.infrastructure.utils.ExcelRead"></bean>
+	
+	<bean id="excelReadx" class="com.iboray.lms.infrastructure.utils.ExcelRead2010"></bean>
+</beans>
