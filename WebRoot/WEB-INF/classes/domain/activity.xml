@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xsi:schemaLocation="
+            http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+            http://www.springframework.org/schema/aop
+            http://www.springframework.org/schema/aop/spring-aop-2.5.xsd"
+    default-autowire="autodetect">
+    
+    <bean id="userActivity" class="com.iboray.lms.domain.activity.UserActivity">
+		<property name="userMapper" ref="userMapper" />
+		<property name="userRoleMapper" ref="userRoleMapper" />
+		<property name="mResourceRoleMapper" ref="mResourceRoleMapper" />
+		<property name="roleMapper" ref="roleMapper" />
+		<property name="mResourceMapper" ref="mResourceMapper" />
+		<property name="mapper" ref="beanMapper" />
+		<property name="roleActivity" ref="roleActivity" />
+	</bean>
+    
+     <bean id="mResourceActivity" class="com.iboray.lms.domain.activity.MResourceActivity">
+		<property name="mResourceMapper" ref="mResourceMapper" />
+		<property name="mapper" ref="beanMapper" />
+	</bean>
+
+     <bean id="roleActivity" class="com.iboray.lms.domain.activity.RoleActivity">
+		<property name="roleMapper" ref="roleMapper" />
+		<property name="mResourceMapper" ref="mResourceMapper" />
+		<property name="mResourceRoleMapper" ref="mResourceRoleMapper" />
+		<property name="mapper" ref="beanMapper" />
+	 </bean>
+     <bean id="deptActivity" class="com.iboray.lms.domain.activity.DeptActivity">
+		<property name="deptMapper" ref="deptMapper" />
+		<property name="mapper" ref="beanMapper" />
+	 </bean>	 
+	 <bean id="planActivity" class="com.iboray.lms.domain.activity.PlanActivity">
+		<property name="planMapper" ref="planMapper" />
+		<property name="planchangedetailsMapper" ref="planchangedetailsMapper" />
+		<property name="mapper" ref="beanMapper" />
+	 </bean>
+	 <bean id="procurementSourceActivity" class="com.iboray.lms.domain.activity.ProcurementSourceActivity">
+		<property name="procurementSourceMapper" ref="procurementSourceMapper" />
+		<property name="mapper" ref="beanMapper" />
+		<property name="planActivity" ref="planActivity" />
+	 </bean>
+	 <bean id="xscontractActivity" class="com.iboray.lms.domain.activity.XScontractActivity">
+		<property name="xscontractMapper" ref="XscontractMapper" />
+		<property name="mapper" ref="beanMapper" />
+		<property name="planActivity" ref="planActivity" />
+	 </bean>
+	 <bean id="cgcontractActivity" class="com.iboray.lms.domain.activity.CGcontractActivity">
+		<property name="cgcontractMapper" ref="cgcontractMapper" />
+		<property name="mapper" ref="beanMapper" />
+		<property name="planActivity" ref="planActivity" />
+	 </bean>
+	 <bean id="usecompActivity" class="com.iboray.lms.domain.activity.UsecompActivity">
+		<property name="usecompMapper" ref="usecompMapper" />
+		<property name="mapper" ref="beanMapper" />
+	 </bean>
+</beans>

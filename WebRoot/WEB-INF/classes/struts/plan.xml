@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<package name="plan" namespace="/" extends="struts-default">
+		<action name="plan_*" class="com.iboray.lms.userinterface.action.PlanAction"
+			method="{1}">
+			<result name="success">/page/plan/index.jsp</result>
+			<result name="addInput">/page/plan/add.jsp</result>
+		</action>
+	</package>
+</struts>

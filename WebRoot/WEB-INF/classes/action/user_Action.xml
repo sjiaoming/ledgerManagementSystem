@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xsi:schemaLocation="
+            http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+            http://www.springframework.org/schema/aop
+            http://www.springframework.org/schema/aop/spring-aop-2.5.xsd"
+    default-autowire="autodetect">
+    
+	<bean id="baseAction" class="com.iboray.lms.userinterface.action.BaseAction" scope="prototype"></bean>
+   	
+	<bean id="userAction" class="com.iboray.lms.userinterface.action.UserAction" scope="prototype">
+		<property name="rs" ref="roleService"></property>
+		<property name="us" ref="userService"></property>
+	</bean>   
+	
+	<bean id="roleAction" class="com.iboray.lms.userinterface.action.RoleAction" scope="prototype">
+		<property name="roleService" ref="roleService"></property>
+		<property name="mResourceService" ref="mResourceService"></property>
+	</bean>  
+	
+	<bean id="mResourceAction" class="com.iboray.lms.userinterface.action.MResourceAction" scope="prototype">
+		<property name="mResourceService" ref="mResourceService"></property>
+	</bean>
+	<bean id="cgcontractAction" class="com.iboray.lms.userinterface.action.CGcontractAction" scope="prototype">
+		<property name="cgcontractService" ref="cgcontractService"></property>
+	</bean>
+	<bean id="procurementSourceAction" class="com.iboray.lms.userinterface.action.ProcurementSourceAction" scope="prototype">
+		<property name="procurementSourceService" ref="procurementSourceService"></property>
+	</bean>
+	<bean id="xscontractAction" class="com.iboray.lms.userinterface.action.XScontractAction" scope="prototype">
+		<property name="xscontractService" ref="xscontractService"></property>
+	</bean>
+	<bean id="planAction" class="com.iboray.lms.userinterface.action.PlanAction" scope="prototype">
+		<property name="planService" ref="planService"></property>
+	</bean>
+	
+	<bean id="fileUploadStatus" class="com.iboray.lms.userinterface.action.FileUploadStatus" scope="prototype"></bean>
+	<bean id="planImportServlet" class="com.iboray.lms.userinterface.servlet.PlanImportServlet" scope="prototype">
+		<property name="planService" ref="planService"></property>
+		<property name="usecompService" ref="usecompService"></property>
+		<property name="deptService" ref="deptService"></property>
+		<property name="excelRead" ref="excelRead"></property>
+		<property name="excelReadx" ref="excelReadx"></property>
+	</bean>
+</beans>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xsi:schemaLocation="
+            http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+            http://www.springframework.org/schema/aop
+            http://www.springframework.org/schema/aop/spring-aop-2.5.xsd"
+    default-autowire="autodetect">
+    
+    <aop:config>
+        <aop:aspect id="logAspect" ref="logAspectBean">
+            <!--配置com.onlinestore.application.service包下所有类或接口的所有方法-->
+            <aop:pointcut id="logPointcut"
+                expression="execution(* com.iboray.lms.application.service.*.*(..))" />
+            <aop:before pointcut-ref="logPointcut" method="doBefore"/>
+            <aop:after pointcut-ref="logPointcut" method="doAfter"/>
+            <aop:around pointcut-ref="logPointcut" method="doAround"/>
+            <aop:after-throwing pointcut-ref="logPointcut" method="doThrowing" throwing="ex"/>
+        </aop:aspect>
+    </aop:config>
+    
+    <bean id="logAspectBean" class="com.iboray.lms.application.service.aop.LogAspect" />
+  
+</beans>

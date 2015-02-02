@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+            http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+            http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.5.xsd
+            http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+	
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean"> 
+	    <property name="configLocation" value="classpath:orm/sqlMapConfig.xml"></property>        
+	    <property name="dataSource" ref="dataSource" />    
+	</bean>
+	
+	<bean id="beanMapper"  class="org.dozer.spring.DozerBeanMapperFactoryBean">
+ 		<property name="mappingFiles" value="classpath*:dozer/dozer_*.xml" />
+	</bean>
+	
+	<bean id="arrivalMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">    
+	    <property name="mapperInterface" value="com.iboray.lms.infrastructure.dao.ArrivalMapper" />     
+	    <property name="sqlSessionFactory" ref="sqlSessionFactory"></property>    
+	</bean>  
+	
+	<bean id="billingMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">    
+	    <property name="mapperInterface" value="com.iboray.lms.infrastructure.dao.BillingMapper" />     
+	    <property name="sqlSessionFactory" ref="sqlSessionFactory"></property>    
+	</bean>    
+	
+	<bean id="cgcontractCreditMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">    
+	    <property name="mapperInterface" value="com.iboray.lms.infrastructure.dao.CGcontractCreditMapper" />     
+	    <property name="sqlSessionFactory" ref="sqlSessionFactory"></property>    
+	</bean>
+	
+	<bean id="cgcontractMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">    
+	    <property name="mapperInterface" value="com.iboray.lms.infrastructure.dao.CGcontractMapper" />     
+	    <property name="sqlSessionFactory" ref="sqlSessionFactory"></property>    
+	</bean>
+	
+	<bean id="deptMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">    
+	    <property name="mapperInterface" value="com.iboray.lms.infrastructure.dao.DeptMapper" />     
+	    <property name="sqlSessionFactory" ref="sqlSessionFactory"></property>    
+	</bean>
+	
+	<bean id="mResourceMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">    
+	    <property name="mapperInterface" value="com.iboray.lms.infrastructure.dao.MResourceMapper" />     
+	    <property name="sqlSessionFactory" ref="sqlSessionFactory"></property>    
+	</bean>
+	
+	<bean id="mResourceRoleMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">    
+	    <property name="mapperInterface" value="com.iboray.lms.infrastructure.dao.MResourceRoleMapper" />     
+	    <property name="sqlSessionFactory" ref="sqlSessionFactory"></property>    
+	</bean>
+	
+	<bean id="payedMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">    
+	    <property name="mapperInterface" value="com.iboray.lms.infrastructure.dao.PayedMapper" />     
+	    <property name="sqlSessionFactory" ref="sqlSessionFactory"></property>    
+	</bean>
+	
+	<bean id="planMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">    
+	    <property name="mapperInterface" value="com.iboray.lms.infrastructure.dao.PlanMapper" />     
+	    <property name="sqlSessionFactory" ref="sqlSessionFactory"></property>    
+	</bean>
+	
+	<bean id="planchangedetailsMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">    
+	    <property name="mapperInterface" value="com.iboray.lms.infrastructure.dao.PlanchangedetailsMapper" />     
+	    <property name="sqlSessionFactory" ref="sqlSessionFactory"></property>    
+	</bean>	
+	
+	<bean id="procurementSourceMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">    
+	    <property name="mapperInterface" value="com.iboray.lms.infrastructure.dao.ProcurementSourceMapper" />     
+	    <property name="sqlSessionFactory" ref="sqlSessionFactory"></property>    
+	</bean>
+	
+	<bean id="receivedMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">    
+	    <property name="mapperInterface" value="com.iboray.lms.infrastructure.dao.ReceivedMapper" />     
+	    <property name="sqlSessionFactory" ref="sqlSessionFactory"></property>    
+	</bean>
+	
+	<bean id="roleMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">    
+	    <property name="mapperInterface" value="com.iboray.lms.infrastructure.dao.RoleMapper" />     
+	    <property name="sqlSessionFactory" ref="sqlSessionFactory"></property>    
+	</bean>
+	
+	<bean id="suppliersMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">    
+	    <property name="mapperInterface" value="com.iboray.lms.infrastructure.dao.SuppliersMapper" />     
+	    <property name="sqlSessionFactory" ref="sqlSessionFactory"></property>    
+	</bean>
+	
+	<bean id="usecompMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">    
+	    <property name="mapperInterface" value="com.iboray.lms.infrastructure.dao.UsecompMapper" />     
+	    <property name="sqlSessionFactory" ref="sqlSessionFactory"></property>    
+	</bean>
+	
+	<bean id="userMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">    
+	    <property name="mapperInterface" value="com.iboray.lms.infrastructure.dao.UserMapper" />     
+	    <property name="sqlSessionFactory" ref="sqlSessionFactory"></property>    
+	</bean>
+	
+	<bean id="userRoleMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">    
+	    <property name="mapperInterface" value="com.iboray.lms.infrastructure.dao.UserRoleMapper" />     
+	    <property name="sqlSessionFactory" ref="sqlSessionFactory"></property>    
+	</bean>
+	
+	<bean id="XscontractMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">    
+	    <property name="mapperInterface" value="com.iboray.lms.infrastructure.dao.XscontractMapper" />     
+	    <property name="sqlSessionFactory" ref="sqlSessionFactory"></property>    
+	</bean>
+	
+</beans>

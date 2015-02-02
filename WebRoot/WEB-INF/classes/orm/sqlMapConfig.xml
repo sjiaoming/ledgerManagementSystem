@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings>
+		<setting name="cacheEnabled" value="true" />
+		<setting name="useGeneratedKeys" value="true" />
+		<setting name="defaultExecutorType" value="REUSE" />
+		<setting name="lazyLoadingEnabled" value="true"/>
+		<setting name="defaultStatementTimeout" value="1000"/> 
+	</settings>
+							
+   <mappers>
+		<mapper resource="com/iboray/lms/infrastructure/dao/xml/ArrivalMapper.xml" />
+		<mapper resource="com/iboray/lms/infrastructure/dao/xml/BillingMapper.xml" />
+		<mapper resource="com/iboray/lms/infrastructure/dao/xml/CGcontractCreditMapper.xml" />
+		<mapper resource="com/iboray/lms/infrastructure/dao/xml/CGcontractMapper.xml" />
+		<mapper resource="com/iboray/lms/infrastructure/dao/xml/DeptMapper.xml" />
+		<mapper resource="com/iboray/lms/infrastructure/dao/xml/MResourceMapper.xml" />
+		<mapper resource="com/iboray/lms/infrastructure/dao/xml/MResourceRoleMapper.xml" />
+		<mapper resource="com/iboray/lms/infrastructure/dao/xml/PayedMapper.xml" />
+		<mapper resource="com/iboray/lms/infrastructure/dao/xml/PlanMapper.xml" />
+		<mapper resource="com/iboray/lms/infrastructure/dao/xml/PlanchangedetailsMapper.xml" />
+		<mapper resource="com/iboray/lms/infrastructure/dao/xml/ProcurementSourceMapper.xml" />
+		<mapper resource="com/iboray/lms/infrastructure/dao/xml/ReceivedMapper.xml" />
+		<mapper resource="com/iboray/lms/infrastructure/dao/xml/RoleMapper.xml" />
+		<mapper resource="com/iboray/lms/infrastructure/dao/xml/SuppliersMapper.xml" />
+		<mapper resource="com/iboray/lms/infrastructure/dao/xml/UsecompMapper.xml" />
+		<mapper resource="com/iboray/lms/infrastructure/dao/xml/UserMapper.xml" />
+		<mapper resource="com/iboray/lms/infrastructure/dao/xml/UserRoleMapper.xml" />
+		<mapper resource="com/iboray/lms/infrastructure/dao/xml/XscontractMapper.xml" />
+	</mappers>
+	
+</configuration> 
+
+
